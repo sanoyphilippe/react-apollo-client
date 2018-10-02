@@ -62,13 +62,13 @@ Now if you're running the app on your local system, open up your web browser and
 
 You'll now see the app running on your browser! Congratulations!
 
-You can now enter some input into the text field and try searching for different users and/or properties.
+You can now enter some input into the text field and try searching for different users and/or properties. Searching is case insensitive.
 
 You don't need to match the exact values for the fields, just typing the first partial letters of the field values will match it with those entries. However, for matching of the street field it checks if the street field contains the 'keyword' inputted by the user. This is done with an iLike %KEYWORD% matching both sides.
 
 After inputing some values in the text field press the search button right next to it to search for any matches.
 
-You can place multiple-keywords to match with the fields by separating them with a space. e.g. You can search with a sample input like `"Kris Davao"` (without the double quotes) and it will find all matches for the keywords 'kevin' and 'davao'.
+You can place multiple-keywords to match with the fields by separating them with a space. e.g. You can search with a sample input like `"Kris Davao"` (without the double quotes) and it will find all matches for the keywords 'kris' and 'davao'.
 
 ## Authors
 
