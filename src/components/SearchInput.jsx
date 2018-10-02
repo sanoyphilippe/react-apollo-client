@@ -4,13 +4,11 @@ class SearchInput extends Component {
   render() {
     return (
       <div className="row">
-        <div className="col-sm-2">
+        <div className="col-md-2">
           <input type="text" id="searchInput"></input>
         </div>
-        <div className="col-sm-2">
-          <button className="btn btn-sm" onClick={this.props.onSearch}> Search </button>
-        </div>
-        <div className="col-sm-8">
+        <div className="col-md-2">
+          <button className="btn btn-sm btn-primary" onClick={this.props.onSearch}> Search </button>
         </div>
       </div>
     );

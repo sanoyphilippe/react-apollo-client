@@ -43,55 +43,56 @@ const UsersProperties = (props) => {
         const userHeader = data.users.length > 0 ? <h2 key="user">Users</h2> : null;
         // remove header when no property is found
         const propertyHeader = data.properties.length > 0 ? <h2 key="property">Properties</h2> : null;
-        // list of users that match user's input
-        const users = (
-          <ul key="userList" className="list-group">
-          {data.users.map((user) => (
-            <div key={user.id}>
+
+        // template for each property list entry
+        const propertyListEntry = (property) => {
+          return (
+            <div key={property.id}>
               <li className="list-group-item">
-                { `${user.firstName} ${user.lastName}` }
-                { user.properties && user.properties.length >= 0 ? (
-                  <React.Fragment>
-                  <div className="row">
-                    <div className="col-md-3">
-                      <h5>
-                        {`${user.firstName}'s`} Properties
-                        &nbsp;<span className="badge badge-primary badge-pill">{user.properties.length}</span>
-                      </h5>
-                    </div>
-                  </div>
-                  <ul className="list-group list-group-flush">
-                    {user.properties && user.properties.map((property) => (
-                      <li key={property.id} className="list-group-item d-flex justify-content-between align-items-center">
-                        {`${property.city} ${property.street} ${property.rent}`}
-                      </li>
-                    ))}
-                  </ul>
-                  </React.Fragment>
-                ) : <p>{`${user.firstName}`} has no properties</p>
-                }
+                <div className="row">
+                  Address: {`${property.street}, ${property.city}, ${property.state}, ${property.zip}`}
+                </div>
+                <div className="row">
+                  Rent: {`$${property.rent}`}
+                </div>
               </li>
             </div>
-          ))}
-        </ul>
-        )
-        // list of properties that match user's input
-        const properties = (
-          <ul key="propertyList" className="list-group">
-            {data.properties.map((property) => (
-              <div key={property.id}>
-                  <li className="list-group-item">
+          )
+        };
+        // list of users that match user's input
+        const users = data.users && data.users.length > 0 ? (
+          <ul key="userList" className="list-group">
+            {data.users.map((user) => (
+              <div key={user.id}>
+                <li className="list-group-item">
+                  { `${user.firstName} ${user.lastName}` }
+                  { user.properties && user.properties.length >= 0 ? (
+                    <React.Fragment>
                     <div className="row">
-                      Address: {`${property.street} ${property.city} ${property.state} ${property.zip}`}
+                      <div className="col-md-3">
+                        <h5>
+                          {`${user.firstName}'s`} Properties
+                          &nbsp;<span className="badge badge-primary badge-pill">{user.properties.length}</span>
+                        </h5>
+                      </div>
                     </div>
-                    <div className="row">
-                      Rent: {`${property.rent}`}
-                    </div>
-                  </li>
+                    <ul className="list-group list-group-flush">
+                      {user.properties && user.properties.map((property) => propertyListEntry(property))}
+                    </ul>
+                    </React.Fragment>
+                  ) : <p>{`${user.firstName}`} has no properties</p>
+                  }
+                </li>
               </div>
             ))}
           </ul>
-        );
+        ) : null;
+        // list of properties that match user's input
+        const properties = data.properties && data.properties.length > 0 ? (
+          <ul key="propertyList" className="list-group">
+            {data.properties.map((property) => propertyListEntry(property))}
+          </ul>
+        ) : null;
         // place all dom parts in an array
         const dom = [userHeader, users, propertyHeader, properties]
         return dom;
