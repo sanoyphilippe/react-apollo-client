@@ -6,6 +6,8 @@ Tworent uses bleeding edge, hyper-advance technologies like React, Apollo, etc.
 
 Tworent is the + 1 version and the future of all online renting websites.
 
+This app was bootstrapped with https://github.com/facebook/create-react-app
+
 ## Getting Started
 
 Clone this repository on your local system
@@ -52,30 +54,21 @@ Now after doing all of the above, simply run the command
 npm start
 ```
 
-If you're running the app on your local system and you just used the default values, open up your web browser and go to the following url `http://localhost:3000/search`
+Your app will then start and by default it uses the port 3000. If the port is being used, it will ask you if you want to use another port.
 
-#### GRAPHIQL
+Now if you're running the app on your local system, open up your web browser and go to the following url `http://localhost:3000` or whichever port that your app is running in.
 
-This app optionally uses `graphiql` which gives us some nice interface to test our API
+#### SEARCH
 
-If you enabled graphiql via setting `ENABLE_GRAPHIQL` to true, then on the left hand side editor you can place the following query
-```
-{
-  users {
-    id
-    firstName
-    lastName
-    properties {
-      street
-      city
-      rent
-    }
-  }
-}
-```
-You should now see the results on the right hand side of the screen, this is what is returned to clients when they query your graphql end-point.
+You'll now see the app running on your browser! Congratulations!
 
-At the top right corner there is a button `docs`, clicking it would show some more info regarding the schema for this end-point.
+You can now enter some input into the text field and try searching for different users and/or properties.
+
+You don't need to match the exact values for the fields, just typing the first partial letters of the field values will match it with those entries. However, for matching of the street field it checks if the street field contains the 'keyword' inputted by the user. This is done with an iLike %KEYWORD% matching both sides.
+
+After inputing some values in the text field press the search button right next to it to search for any matches.
+
+You can place multiple-keywords to match with the fields by separating them with a space. e.g. You can search with a sample input like `"Kris Davao"` (without the double quotes) and it will find all matches for the keywords 'kevin' and 'davao'.
 
 ## Authors
 
