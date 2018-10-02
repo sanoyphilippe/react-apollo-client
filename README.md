@@ -31,7 +31,7 @@ First we need to install the node_modules.
 So change to the directory created in your system, after cloning this repository.
 
 ```
-cd node-express-graphql-server
+cd tworent-frontend
 npm install
 ```
 #### ENV
