@@ -4,6 +4,7 @@ import { Query } from "react-apollo";
 
 // query returning all users or all properties matching user input string
 const UsersProperties = (props) => {
+  // query only when search field has at least one character
   if (props.text && props.text.length > 0) {
     return (
     <Query
