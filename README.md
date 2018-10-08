@@ -76,7 +76,7 @@ You can place multiple-keywords to match with the fields by separating them with
 
 * **Philippe Oscar Sanoy** - *Scoured through various sources of information to build this*
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/sanoyphilippe/tworent-frontend/graphs/contributors) who participated in this project.
 
 ## Acknowledgments
 
